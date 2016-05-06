@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="spiceApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Spice of Life</title>
+    <script src="vendors/angular/angular.min.js"></script>
+    <script src="vendors/angular-route/angular-route.min.js"></script>
+    <script src="assets/scripts/client.min.js"></script>
+
+    <!-- controllers -->
+    <script src="assets/scripts/homecontroller.js"></script>
+    <script src="assets/scripts/listcontroller.js"></script>
+    <script src="assets/scripts/logincontroller.js"></script>
+    <script src="assets/scripts/logoutcontroller.js"></script>
+    <script src="assets/scripts/regcontroller.js"></script>
+
+    <!-- services -->
+    <script src="assets/scripts/loginservice.js"></script>
+
+    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="views/style.css" /> -->
+
+    <base href="/" />
+  </head>
+  <body class="container">
+    <h1>Spice of Life</h1>
+    <nav class="navbar navbar-default">
+    <div class="container">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="/">Login</a>
+        </li>
+        <li>
+          <a href="/register">Register</a>
+        </li>
+        <li>
+          <a href="/home">Homepage</a>
+        </li>
+        <li>
+          <a href="/listFavorites">Favorites list</a>
+        </li>
+        <li>
+          <a href="/logout">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div ng-view>
+
+  </div>
+
+  </body>
+</html>

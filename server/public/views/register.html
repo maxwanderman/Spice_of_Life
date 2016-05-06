@@ -1,0 +1,26 @@
+
+<p>
+  {{reg.message}}
+  {{reg}}
+</p>
+
+<!-- <form> -->
+  <div>
+     <label for="username">Username:</label>
+     <input ng-model="reg.user_name" type="text" name="username" id="username"/>
+  </div>
+  <div>
+     <label for="password">Password:</label>
+     <input ng-model="reg.password" type="password" name="password" id="password"/>
+  </div>
+  <div>
+     <label for="zip_code">Zip Code:</label>
+     <input ng-model="reg.zip_code" type="zip_code" name="zip_code" id="zip_code"/>
+  </div>
+  {{reg.user_name}}
+  {{reg.password}}
+  {{reg.zip_code}}
+  <div>
+     <button ng-click="reg.sendUser()">Click to register :) </button>
+  </div>
+<!-- </form> -->
