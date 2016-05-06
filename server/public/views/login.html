@@ -3,18 +3,16 @@
   {{login.message}}
 </p>
 <div>
-<form action="/" method="post">
 <div>
    <label for="username">Username:</label>
-   <input type="text" name="username" id="username"/>
+   <input ng-model="login.user_name" type="text" name="username" id="username"/>
 </div>
 <div>
    <label for="password">Password:</label>
-   <input type="password" name="password" id="password"/>
+   <input ng-model="login.password" type="password" name="password" id="password"/>
 </div>
 <div>
-   <input type="submit" value="Log In"/>
+   <button ng-click="login.obtainUser()">Login</button>
    <a href="/register">Register</a>
 </div>
-</form>
 </div>

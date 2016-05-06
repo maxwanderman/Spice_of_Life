@@ -8,10 +8,12 @@ app.controller('RegController', function(LoginService){
   vm.zip_code = '';
 
 
-  // vm.postUser = LoginService.postUser;
   vm.sendUser = function(){
     LoginService.postUser(vm.user_name, vm.password, vm.zip_code);
-  }
+    vm.user_name = '';
+    vm.password = '';
+    vm.zip_code = '';
+  };
 
 
 });
