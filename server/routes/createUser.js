@@ -16,7 +16,6 @@ router.post('/', function(request, response){
       console.log(err);
       response.sendStatus(500);
     } else {
-      // console.log('got the stuff');
       var result = [];
       console.log('Request body is: ', request.body);
 

@@ -2,6 +2,7 @@ var express = require('express');
 var index = require('./routes/index');
 var bodyParser = require('body-parser');
 var createUser = require('./routes/createUser');
+var listEditor = require('./routes/listEditor');
 var initializeDB = require('./db/list').initializeDB;
 var localStrategy = require('passport-local').Strategy;
 var passport = require('passport');
@@ -102,6 +103,7 @@ passport.deserializeUser(function(id, done) {
 app.use('/', index);
 app.use('/createUser', createUser);
 app.use('/users', users);
+app.use('/listEditor', listEditor);
 
 initializeDB();
 

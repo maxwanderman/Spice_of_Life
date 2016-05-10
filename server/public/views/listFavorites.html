@@ -2,3 +2,19 @@
 <p>
   {{list.message}}
 </p>
+<div>
+  <ul ng-repeat="ist in list.listData.info">
+    <li>
+      {{ist.restaurant_name}}
+    </li>
+  </ul>
+</div>
+<div>
+  <ul>
+    <li>
+      <label for="restaurant_name">New Restaurant:</label>
+      <input ng-model="list.restaurant_name" type="text" name="restaurant_name" id="restaurant_name"/>
+      <button ng-click="list.addRest()">Submit</button>
+    </li>
+  </ul>
+</div>

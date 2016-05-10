@@ -1,4 +1,16 @@
 <h2>Home page</h2>
 <p>
-  {{home.message}}
+  <h3>Welcome {{home.userData.info.user_name}}!</h3>
 </p>
+
+
+<div>
+  <h4>Pick from Favorites:</h4>
+  <button></button>
+</div>
+<div>
+  <h4>Surprise Me!</h4>
+  Enter Zip Code:
+  <input type="text" value="{{home.userData.info.zip_code}}"/>
+  <button>Submit</button>
+</div>
