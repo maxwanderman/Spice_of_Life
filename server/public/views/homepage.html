@@ -13,10 +13,11 @@
     <h4>Surprise Me!</h4>
     Enter Zip Code:
     <input type="text" ng-model="home.zip" value="{{home.userData.info.zip_code}}"/>
-    <button ng-click="home.obtainZip()">Submit</button>
+    <button ng-click="home.obtainSurprise()">Submit</button>
   </div>
   </div>
 <div ng-show="home.showRest">
   <h1>{{home.listChoice}}</h1>
   <button ng-click="home.getListRandom()">Retry</button>
 </div>
+<h1>{{home.finalChoice.info}}</h1>

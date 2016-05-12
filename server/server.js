@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var createUser = require('./routes/createUser');
 var listEditor = require('./routes/listEditor');
 var getZip = require('./routes/getZip');
+var getRest = require('./routes/getRest');
 var initializeDB = require('./db/list').initializeDB;
 var localStrategy = require('passport-local').Strategy;
 var passport = require('passport');
@@ -106,6 +107,7 @@ app.use('/createUser', createUser);
 app.use('/users', users);
 app.use('/listEditor', listEditor);
 app.use('/getZip', getZip);
+app.use('/getRest', getRest);
 
 initializeDB();
 

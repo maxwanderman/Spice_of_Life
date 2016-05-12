@@ -4,11 +4,14 @@ app.controller('HomeController', function(LoginService, ListManagerService, rand
 
   vm.userData = LoginService.userData;
   vm.restList = ListManagerService.restList;
+  vm.finaleChoice = randomRestService.finalChoice;
+  // vm.finalChoice = {};
   vm.restArray = [];
   vm.listChoice = '';
   vm.zip = '';
   vm.showRest = false;
   vm.superSelect = true;
+
 
   LoginService.getUser();
   ListManagerService.getRestList();
@@ -41,9 +44,10 @@ app.controller('HomeController', function(LoginService, ListManagerService, rand
     return secondArray;
   };
 
-  vm.obtainZip = function(){
-    randomRestService.getZip(vm.zip_code);
+  vm.obtainSurprise = function(){
+    randomRestService.surpriseME(vm.zip);
     vm.zip = '';
+    vm.finaleChoice = randomRestService.finalChoice;
   };
 
 
