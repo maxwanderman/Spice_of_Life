@@ -1,6 +1,7 @@
 angular.module('spiceApp').factory('ListManagerService', function($http, $location){
 
   var listData = {};
+  var restList = [];
 
   var postRestaurant = function(restaurant_name){
     $http.post('/listEditor', {restaurant_name: restaurant_name}).then(function(response) {
@@ -14,10 +15,18 @@ angular.module('spiceApp').factory('ListManagerService', function($http, $locati
       });
     };
 
+    var getRestList = function (){
+      $http.get('/listEditor').then(function(response){
+        restList.info = response.data;
+        });
+      };
+
   return {
     postRestaurant: postRestaurant,
     getRestaurant: getRestaurant,
-    listData: listData
+    listData: listData,
+    getRestList: getRestList,
+    restList: restList
   };
 
 });

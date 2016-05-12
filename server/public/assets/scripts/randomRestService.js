@@ -1,8 +1,14 @@
-angular.module('spiceApp').factory('RandomRestService', function($http, $location){
+angular.module('spiceApp').factory('randomRestService', function($http, $location){
 
 
   var getZip = function(zip_code){
-    $http
-  }
+    $http.get('/getZip/' + zip_code).then(function(response){
+      console.log(response);
+    });
+  };
+
+  return {
+    getZip: getZip
+  };
 
 });

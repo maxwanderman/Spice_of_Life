@@ -5,7 +5,18 @@ app.controller('ListController', function(ListManagerService){
 
   vm.message = "Edit your favorites";
 
+  vm.addValue = false;
+  vm.editValue = false;
+
   vm.restaurant_name = '';
+
+  vm.edit = function (){
+    vm.editValue = true;
+  };
+
+  vm.add = function (){
+    vm.addValue = true;
+  };
 
   vm.addRest = function (){
     ListManagerService.postRestaurant(vm.restaurant_name);

@@ -3,6 +3,7 @@ var index = require('./routes/index');
 var bodyParser = require('body-parser');
 var createUser = require('./routes/createUser');
 var listEditor = require('./routes/listEditor');
+var getZip = require('./routes/getZip');
 var initializeDB = require('./db/list').initializeDB;
 var localStrategy = require('passport-local').Strategy;
 var passport = require('passport');
@@ -104,6 +105,7 @@ app.use('/', index);
 app.use('/createUser', createUser);
 app.use('/users', users);
 app.use('/listEditor', listEditor);
+app.use('/getZip', getZip);
 
 initializeDB();
 

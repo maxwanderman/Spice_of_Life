@@ -1,16 +1,22 @@
+<div ng-show="home.superSelect">
 <h2>Home page</h2>
 <p>
   <h3>Welcome {{home.userData.info.user_name}}!</h3>
 </p>
-
-
-<div>
-  <h4>Pick from Favorites:</h4>
-  <button></button>
 </div>
-<div>
-  <h4>Surprise Me!</h4>
-  Enter Zip Code:
-  <input type="text" value="{{home.userData.info.zip_code}}"/>
-  <button>Submit</button>
+<div ng-show="home.superSelect">
+  <div>
+    <h4>Pick from Favorites:</h4>
+    <button ng-click="home.getListRandom()">Click for Restaurants</button>
+  </div>
+  <div>
+    <h4>Surprise Me!</h4>
+    Enter Zip Code:
+    <input type="text" ng-model="home.zip" value="{{home.userData.info.zip_code}}"/>
+    <button ng-click="home.obtainZip()">Submit</button>
+  </div>
+  </div>
+<div ng-show="home.showRest">
+  <h1>{{home.listChoice}}</h1>
+  <button ng-click="home.getListRandom()">Retry</button>
 </div>
