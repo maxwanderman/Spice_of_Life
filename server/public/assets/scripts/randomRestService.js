@@ -21,7 +21,7 @@ angular.module('spiceApp').factory('randomRestService', function($http, $locatio
     $http.get('/getRest/' + lat + '/' + lng).then(function(response){
       resultRest = response.data.restaurants;
       console.log(resultRest);
-      console.log(resultRest);
+      shuffle(resultRest);
       finalChoice.info = resultRest[0];
       console.log(finalChoice);
 
@@ -43,7 +43,7 @@ shuffle = function(array) {
 
   return {
     surpriseME : surpriseME,
-    getRest: getRest
+    finalChoice: finalChoice
   };
 
 });

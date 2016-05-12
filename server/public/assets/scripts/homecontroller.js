@@ -4,7 +4,7 @@ app.controller('HomeController', function(LoginService, ListManagerService, rand
 
   vm.userData = LoginService.userData;
   vm.restList = ListManagerService.restList;
-  vm.finaleChoice = randomRestService.finalChoice;
+  vm.finalChoice = randomRestService.finalChoice;
   // vm.finalChoice = {};
   vm.restArray = [];
   vm.listChoice = '';
@@ -47,7 +47,7 @@ app.controller('HomeController', function(LoginService, ListManagerService, rand
   vm.obtainSurprise = function(){
     randomRestService.surpriseME(vm.zip);
     vm.zip = '';
-    vm.finaleChoice = randomRestService.finalChoice;
+    vm.finalChoice = randomRestService.finalChoice;
   };
 
 

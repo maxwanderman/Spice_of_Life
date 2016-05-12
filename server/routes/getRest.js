@@ -7,7 +7,7 @@ router.get('/:lat/:lng', function(request, response){
   var lat = request.params.lat;
   var lng = request.params.lng;
   requestMod({
-    uri:'https://developers.zomato.com/api/v2.1/search?count=5&lat=' + lat + '&lon=' + lng + '&radius=10000',
+    uri:'https://developers.zomato.com/api/v2.1/search?count=15&lat=' + lat + '&lon=' + lng + '&radius=8046',
     method: 'GET',
     // headers: {'user-key': process.env.key}
     headers: {'user-key': 'de2870035b8371bee2d70bb8c0698ed4'}
