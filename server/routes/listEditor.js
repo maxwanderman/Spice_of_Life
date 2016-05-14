@@ -70,4 +70,30 @@ router.post('/', function(request, response){
   });
 });
 
+router.delete('/:id', function(request, response){
+  console.log(request.params.id);
+  pg.connect(connectionString, function(err, client, done){
+    if(err) {
+      console.log(err);
+      response.sendStatus(500);
+    }else {
+      var id = request.params.id;
+      console.log(request.params.id);
+      var query = client.query('DELETE FROM favrestaurant WHERE rest_id =' + id + ' AND user_id =' + request.user.id + 'RETURNING *');
+      var results = [];
+      query.on('error', function(error){
+        console.log(error);
+        response.sendStatus(500);
+      });
+      query.on('row', function(rowData){
+        results.push(rowData);
+      });
+      query.on('end', function(){
+        response.send(results);
+        done();
+      });
+    }
+  });
+});
+
 module.exports = router;

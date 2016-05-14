@@ -1,4 +1,4 @@
-angular.module('spiceApp').factory('randomRestService', function($http, $location){
+angular.module('spiceApp').factory('randomRestService', function($http, $location, ListManagerService){
 
   var resultZip = {};
   var resultRest = [];
@@ -28,7 +28,14 @@ angular.module('spiceApp').factory('randomRestService', function($http, $locatio
     });
 };
 
-shuffle = function(array) {
+var setFavorite = function(){
+  console.log(finalChoice.info.restaurant.name);
+  ListManagerService.postRestaurant(finalChoice.info.restaurant.name);
+
+};
+
+
+var shuffle = function(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
   while (0 !== currentIndex) {
     randomIndex = Math.floor(Math.random() * currentIndex);
@@ -43,7 +50,8 @@ shuffle = function(array) {
 
   return {
     surpriseME : surpriseME,
-    finalChoice: finalChoice
+    finalChoice: finalChoice,
+    setFavorite: setFavorite
   };
 
 });

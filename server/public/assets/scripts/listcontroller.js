@@ -17,6 +17,9 @@ app.controller('ListController', function(ListManagerService){
   vm.add = function (){
     vm.addValue = true;
   };
+  vm.delete = function(){
+
+  };
 
   vm.addRest = function (){
     ListManagerService.postRestaurant(vm.restaurant_name);

@@ -1,23 +1,52 @@
-<div ng-show="home.superSelect">
-<h2>Home page</h2>
-<p>
-  <h3>Welcome {{home.userData.info.user_name}}!</h3>
-</p>
+<nav class="navbar navbar-default">
+<div class="container">
+  <ul class="nav navbar-nav">
+    <li>
+      <a href="/home">Homepage</a>
+    </li>
+    <li>
+      <a href="/listFavorites">Favorites list</a>
+    </li>
+    <li>
+      <a href="/logout">Logout</a>
+    </li>
+  </ul>
 </div>
-<div ng-show="home.superSelect">
-  <div>
-    <h4>Pick from Favorites:</h4>
-    <button ng-click="home.getListRandom()">Click for Restaurants</button>
+</nav>
+<header>
+  <h1 class = "head">Spice of Life</h1>
+</header>
+<div class = "well">
+<div class="blog-header" ng-show="home.superSelect">
+  <h2 class="blog-post-title">Welcome, {{home.userData.info.user_name}}!</h2>
+</div>
+<div class = "row" ng-show="home.superSelect">
+  <div class="col-md-6">
+    <div class ="section">
+    <h4>Pick from Favorites</h4>
+    <button class="btn btn-primary btn-md" ng-click="home.getListRandom()">Click for Restaurants</button>
   </div>
-  <div>
+  </div>
+  <div class="col-md-6">
+    <div class ="section">
     <h4>Surprise Me!</h4>
     Enter Zip Code:
-    <input type="text" ng-model="home.zip" value="{{home.userData.info.zip_code}}"/>
-    <button ng-click="home.obtainSurprise()">Submit</button>
+    <input type="text" ng-model="home.zip" placeholder="{{home.userData.info.zip_code}}"/>
+    <button class="btn btn-primary btn-sm" ng-click="home.obtainSurprise()">Submit</button>
   </div>
   </div>
-<div ng-show="home.showRest">
+  </div>
+<div class = "unveil" ng-show="home.showRest">
   <h1>{{home.listChoice}}</h1>
-  <button ng-click="home.getListRandom()">Retry</button>
+  <button class="btn btn-primary btn-lg" ng-click="home.getListRandom()">Retry</button>
 </div>
-<h1>{{home.finalChoice.info.restaurant.name}}</h1>
+<div class = "unveil" ng-show="home.showRandom">
+  <h1 ng-model="home.newFav">{{home.finalChoice.info.restaurant.name}}</h1>
+  <h3>{{home.finalChoice.info.restaurant.location.address}}</h3>
+
+    <label>Enter Zipcode</label>
+    <input type="text" ng-model="home.zip"><button class="btn btn-primary btn-md" ng-click="home.obtainSurprise()">Retry</button>
+    <button  class="btn btn-primary btn-md" ng-click="home.addToFav()">Save to Favorites</button>
+
+</div>
+</div>

@@ -9,7 +9,9 @@ app.controller('HomeController', function(LoginService, ListManagerService, rand
   vm.restArray = [];
   vm.listChoice = '';
   vm.zip = '';
+  vm.newFav = '';
   vm.showRest = false;
+  vm.showRandom = false;
   vm.superSelect = true;
 
 
@@ -48,6 +50,14 @@ app.controller('HomeController', function(LoginService, ListManagerService, rand
     randomRestService.surpriseME(vm.zip);
     vm.zip = '';
     vm.finalChoice = randomRestService.finalChoice;
+    vm.showRandom = true;
+    vm.superSelect = false;
+  };
+
+  vm.addToFav = function(){
+    console.log(vm.newFav);
+    // ListManagerService.postRestaurant(vm.newFav);
+    randomRestService.setFavorite();
   };
 
 

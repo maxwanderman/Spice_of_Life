@@ -1,18 +1,21 @@
-<h2>Login</h2>
-<p>
-  {{login.message}}
-</p>
-<div>
-<div>
-   <label for="username">Username:</label>
-   <input ng-model="login.user_name" type="text" name="username" id="username"/>
+
+<header>
+<h1 class = "head">Spice of Life</h1>
+</header>
+<body class = "container">
+<div class = "loginRegister">
+<h2 class = "loginRegisterHead">Login</h2>
+<div class="input-group">
+   <input ng-model="login.user_name" class="form-control" type="text" placeholder= "Username" name="username" id="username"/>
+</div>
+<div class="input-group">
+   <input ng-model="login.password" class="form-control" type="password"  placeholder="Password" name="password" id="password"/>
 </div>
 <div>
-   <label for="password">Password:</label>
-   <input ng-model="login.password" type="password" name="password" id="password"/>
-</div>
-<div>
-   <button ng-click="login.obtainUser()">Login</button>
-   <a href="/register">Register</a>
+   <button ng-click="login.obtainUser()" class="btn btn-lg btn-primary btn-block">Login</button>
+    <div class = "registerLink">
+      <a href="/register">Register</a>
+    </div>
 </div>
 </div>
+</body>

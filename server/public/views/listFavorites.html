@@ -1,20 +1,49 @@
-<h2>List of Favorites</h2>
-<header>
-  <button ng-click="list.edit()">Edit</button><p>{{list.message}}</p><button ng-click="list.add()">Add</button>
-</header>
-<div>
-  <ul ng-repeat="ist in list.listData.info">
+<nav class="navbar navbar-default">
+<div class="container">
+  <ul class="nav navbar-nav">
     <li>
-      {{ist.restaurant_name}}<button ng-show ="list.editValue">Edit</button><button ng-show ="list.editValue">Delete</button>
+      <a href="/home">Homepage</a>
+    </li>
+    <li>
+      <a href="/listFavorites">Favorites list</a>
+    </li>
+    <li>
+      <a href="/logout">Logout</a>
     </li>
   </ul>
 </div>
+</nav>
+<header>
+  <h1 class = "head">Spice of Life</h1>
+</header>
+<div class="well">
+<h2 class="tableHead">List of Favorites</h2>
 <div>
-  <ul>
-    <li ng-show="list.addValue">
-      <label for="restaurant_name">New Restaurant:</label>
-      <input ng-model="list.restaurant_name" type="text" name="restaurant_name" id="restaurant_name"/>
-      <button ng-click="list.addRest()">Submit</button>
-    </li>
-  </ul>
+  <button type="button" ng-click="list.add()" class= "btn-sm btn-success"><i class="glyphicon glyphicon-plus"></i>  Add Restaurant</button>
+  <table st-table="displayedCollection" class ="table">
+    <thread>
+    <tr>
+      <th st-sort = "restaurantName">
+        Restaurant Name
+      </th>
+    </tr>
+  </thread>
+  <tbody>
+    <tr ng-repeat="ist in list.listData.info">
+      <td>{{ist.restaurant_name}}</td>
+      <td>
+        <button type="button" ng-click="list.delete" class="btn btn-sm btn-danger">
+        <i class = "glyphicon glyphicon-remove-circle"></i>
+      </button>
+      </td>
+    </tr>
+    <tr>
+      <td ng-show="list.addValue">
+        <label for="restaurant_name">New Restaurant:</label>
+        <input ng-model="list.restaurant_name" type="text" name="restaurant_name" id="restaurant_name"/>
+        <button class="btn btn-success" ng-click="list.addRest()">Submit</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
 </div>
