@@ -9,6 +9,7 @@ app.controller('ListController', function(ListManagerService){
   vm.editValue = false;
 
   vm.restaurant_name = '';
+  vm.thingToDelete = '';
 
   vm.edit = function (){
     vm.editValue = true;
@@ -17,8 +18,12 @@ app.controller('ListController', function(ListManagerService){
   vm.add = function (){
     vm.addValue = true;
   };
-  vm.delete = function(){
 
+  vm.deleteThing = function(id){
+    vm.thingToDelete = id;
+    console.log(vm.thingToDelete);
+    ListManagerService.deleteListItem(id);
+    ListManagerService.getRestaurant();
   };
 
   vm.addRest = function (){

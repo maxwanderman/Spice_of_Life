@@ -35,6 +35,10 @@ angular.module('spiceApp').factory('LoginService', function($http, $location){
     });
   };
 
+  var logoutUser = function(){
+    
+  }
+
 
 
     return {

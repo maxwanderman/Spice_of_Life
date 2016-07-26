@@ -1,3 +1,3 @@
-app.controller('LogoutController', function(){
+app.controller('LogoutController', function(LoginService){
   this.message = "Logout";
 });

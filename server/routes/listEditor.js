@@ -18,7 +18,7 @@ router.get('/', function(request, response) {
       console.log(userID);
       // var query = client.query('SELECT rest_id FROM favrestaurant WHERE user_id = (user_id) VALUES($1)' +
       // 'RETURNING id, user_id', [request.user.id]);
-      var query = client.query('SELECT restaurant.restaurant_name FROM restaurant JOIN favrestaurant ON favrestaurant.rest_id = restaurant.id WHERE favrestaurant.user_id = ' + userID + ';');
+      var query = client.query('SELECT restaurant.restaurant_name, restaurant.id FROM restaurant JOIN favrestaurant ON favrestaurant.rest_id = restaurant.id WHERE favrestaurant.user_id = ' + userID + ';');
       var results = [];
       query.on('error', function(err){
         console.log(err);

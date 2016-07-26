@@ -32,7 +32,7 @@
     <tr ng-repeat="ist in list.listData.info">
       <td>{{ist.restaurant_name}}</td>
       <td>
-        <button type="button" ng-click="list.delete" class="btn btn-sm btn-danger">
+        <button type="button" ng-click="list.deleteThing(ist.id)" class="btn btn-sm btn-danger">
         <i class = "glyphicon glyphicon-remove-circle"></i>
       </button>
       </td>
@@ -40,7 +40,7 @@
     <tr>
       <td ng-show="list.addValue">
         <label for="restaurant_name">New Restaurant:</label>
-        <input ng-model="list.restaurant_name" type="text" name="restaurant_name" id="restaurant_name"/>
+        <input class = "inputText" ng-model="list.restaurant_name" type="text" name="restaurant_name" id="restaurant_name"/>
         <button class="btn btn-success" ng-click="list.addRest()">Submit</button>
       </td>
     </tr>

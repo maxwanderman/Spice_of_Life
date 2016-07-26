@@ -12,6 +12,7 @@ angular.module('spiceApp').factory('ListManagerService', function($http, $locati
   var getRestaurant = function (){
     $http.get('/listEditor').then(function(response){
       listData.info = response.data;
+      console.log(listData.info);
       });
     };
 
@@ -21,12 +22,21 @@ angular.module('spiceApp').factory('ListManagerService', function($http, $locati
         });
       };
 
+    var deleteListItem = function (id) {
+    console.log('click works', id);
+    $http.delete('/listEditor/' + id).then(function(response){
+      console.log(response);
+    });
+    getRestList();
+  };
+
   return {
     postRestaurant: postRestaurant,
     getRestaurant: getRestaurant,
     listData: listData,
     getRestList: getRestList,
-    restList: restList
+    restList: restList,
+    deleteListItem: deleteListItem
   };
 
 });

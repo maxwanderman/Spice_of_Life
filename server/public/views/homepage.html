@@ -31,7 +31,7 @@
     <div class ="section">
     <h4>Surprise Me!</h4>
     Enter Zip Code:
-    <input type="text" ng-model="home.zip" placeholder="{{home.userData.info.zip_code}}"/>
+    <input class = "inputText" type="text" ng-model="home.zip" placeholder="{{home.userData.info.zip_code}}"/>
     <button class="btn btn-primary btn-sm" ng-click="home.obtainSurprise()">Submit</button>
   </div>
   </div>
@@ -43,10 +43,17 @@
 <div class = "unveil" ng-show="home.showRandom">
   <h1 ng-model="home.newFav">{{home.finalChoice.info.restaurant.name}}</h1>
   <h3>{{home.finalChoice.info.restaurant.location.address}}</h3>
-
-    <label>Enter Zipcode</label>
-    <input type="text" ng-model="home.zip"><button class="btn btn-primary btn-md" ng-click="home.obtainSurprise()">Retry</button>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="firstChild">
+    <label>Enter Zip Code:</label>
+    <input class = "inputText" type="text" ng-model="home.zip"><br/>
+    <button class="btn btn-primary btn-md" ng-click="home.obtainSurprise()">Retry</button>
+    </div>
+    </div>
+    <div class="col-md-6">
     <button  class="btn btn-primary btn-md" ng-click="home.addToFav()">Save to Favorites</button>
-
+    </div>
+  </div>
 </div>
 </div>
